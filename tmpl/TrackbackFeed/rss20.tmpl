@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title><TMPL_VAR NAME=FEED_TITLE></title>
+    <link><TMPL_VAR NAME=FEED_LINK></link>
+    <description><TMPL_VAR NAME=FEED_DESCRIPTION></description>
+    <language><TMPL_VAR NAME=FEED_LANGUAGE></language>
+    <TMPL_IF NAME=FEED_DATE_RFC822><pubDate><TMPL_VAR NAME=FEED_DATE_RFC822></pubDate></TMPL_IF>
+    <TMPL_LOOP NAME=FEED_ITEMS>
+    <item>
+      <title><TMPL_VAR NAME=ITEM_BLOG_NAME>: <TMPL_VAR NAME=ITEM_TITLE></title>
+      <link><TMPL_VAR NAME=ITEM_LINK></link>
+      <guid><TMPL_VAR NAME=ITEM_LINK></guid>
+      <TMPL_IF NAME=ITEM_DESCRIPTION><description><TMPL_VAR NAME=ITEM_DESCRIPTION></description></TMPL_IF>
+      <pubDate><TMPL_VAR NAME=ITEM_DATE_RFC822></pubDate>
+    </item>
+    </TMPL_LOOP>
+  </channel>
+</rss>
